@@ -1,0 +1,50 @@
+﻿@using Shop.Domain.Models.ProductEntity
+@model List<ProductGalleries>
+@{
+    ViewData["Title"] = "لیست تصاویر";
+    int index = 1;
+}
+<div class="row mt-5">
+    <div class="col-md-12">
+        @if (Model != null && Model.Any())
+        {
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">تصویر</th>
+                                <th scope="col">دستورات</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            @foreach (var productGallery in Model)
+                            {
+                                <tr>
+                                    <th scope="row">@index</th>
+                                    <td>
+                                        <img src="@(PathExtentions.ProductThumb+productGallery.ImageName)" class="img-thumbnail img-max-height">
+                                    </td>
+                                    <td>
+                                        <a class="btn btn-danger btn-sm" asp-area="Admin" asp-controller="Product" asp-action="DeleteImage" asp-route-GalleryId="@productGallery.Id">حذف</a>
+                                    </td>
+                                </tr>
+                                index++;
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        }
+        else
+        {
+            <div class="alert alert-danger">
+                <b>ایتمی وجود ندارد</b>
+            </div>
+        }
+        
+    </div>
+</div>

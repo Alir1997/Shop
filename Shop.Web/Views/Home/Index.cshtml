@@ -1,0 +1,337 @@
+﻿@{
+    ViewData["Title"] = "خانه";
+    var lastProduct = (List<Shop.Domain.ViewModels.Site.Products.ProductItemViewModel>)ViewData["LastProducts"];
+}
+
+<div class="intro-slider-container mb-5">
+    @await Component.InvokeAsync("SliderHome")
+</div>
+
+<div class="container">
+    <h2 class="title text-center mb-4">دسته بندی های محبوب</h2><!-- End .title text-center -->
+    @await Component.InvokeAsync("PopularCategory")
+</div><!-- End .container -->
+
+<div class="mb-4"></div><!-- End .mb-4 -->
+
+
+
+<div class="mb-3"></div><!-- End .mb-5 -->
+
+<div class="container new-arrivals">
+    <div class="heading heading-flex mb-3">
+        <div class="heading-left">
+            <h2 class="title">محصولات جدید</h2><!-- End .title -->
+        </div><!-- End .heading-left -->
+
+        <div class="heading-right">
+            <ul class="nav nav-pills nav-border-anim justify-content-center" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="new-all-link" data-toggle="tab" href="#new-all-tab"
+                       role="tab" aria-controls="new-all-tab" aria-selected="true">همه</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="new-tv-link" data-toggle="tab" href="#new-tv-tab" role="tab"
+                       aria-controls="new-tv-tab" aria-selected="false">تلویزیون</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="new-computers-link" data-toggle="tab" href="#new-computers-tab"
+                       role="tab" aria-controls="new-computers-tab" aria-selected="false">لپ تاپ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="new-phones-link" data-toggle="tab" href="#new-phones-tab"
+                       role="tab" aria-controls="new-phones-tab" aria-selected="false">گوشی</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="new-watches-link" data-toggle="tab" href="#new-watches-tab"
+                       role="tab" aria-controls="new-watches-tab" aria-selected="false">ساعت </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="new-acc-link" data-toggle="tab" href="#new-acc-tab" role="tab"
+                       aria-controls="new-acc-tab" aria-selected="false">شیائومی</a>
+                </li>
+            </ul>
+        </div><!-- End .heading-right -->
+    </div><!-- End .heading -->
+
+    <div class="tab-content tab-content-carousel just-action-icons-sm">
+
+        <div class="tab-pane p-0 fade show active" id="new-all-tab" role="tabpanel"
+             aria-labelledby="new-all-link">
+            <div class="owl-carousel owl-full carousel-equal-height carousel-with-shadow" data-toggle="owl"
+                 data-owl-options='{
+                                "nav": true,
+                                "dots": true,
+                                "margin": 20,
+                                "loop": false,
+                                "rtl": true,
+                            "responsive": {
+                                    "0": {
+                                        "items":2
+                                    },
+                                    "480": {
+                                        "items":2
+                                    },
+                                    "768": {
+                                        "items":3
+                                    },
+                                    "992": {
+                                        "items":4
+                                    },
+                                    "1200": {
+                                        "items":5
+                                    }
+                                }
+                            }'>
+
+                @await Component.InvokeAsync("AllProductInSlider")
+
+            </div><!-- End .owl-carousel -->
+        </div><!-- .End .tab-pane -->
+
+
+        <div class="tab-pane p-0 fade" id="new-tv-tab" role="tabpanel"
+             aria-labelledby="new-tv-tab">
+            <div class="owl-carousel owl-full carousel-equal-height carousel-with-shadow" data-toggle="owl"
+                 data-owl-options='{
+                                "nav": true,
+                                "dots": true,
+                                "margin": 20,
+                                "loop": false,
+                                "rtl": true,
+                            "responsive": {
+                                    "0": {
+                                        "items":2
+                                    },
+                                    "480": {
+                                        "items":2
+                                    },
+                                    "768": {
+                                        "items":3
+                                    },
+                                    "992": {
+                                        "items":4
+                                    },
+                                    "1200": {
+                                        "items":5
+                                    }
+                                }
+                            }'>
+
+
+                @await Component.InvokeAsync("AllInCategoryTv")
+            </div><!-- End .owl-carousel -->
+        </div><!-- .End .tab-pane -->
+
+        <div class="tab-pane p-0 fade" id="new-computers-tab" role="tabpanel"
+             aria-labelledby="new-all-link">
+            <div class="owl-carousel owl-full carousel-equal-height carousel-with-shadow" data-toggle="owl"
+                 data-owl-options='{
+                                "nav": true,
+                                "dots": true,
+                                "margin": 20,
+                                "loop": false,
+                                "rtl": true,
+                            "responsive": {
+                                    "0": {
+                                        "items":2
+                                    },
+                                    "480": {
+                                        "items":2
+                                    },
+                                    "768": {
+                                        "items":3
+                                    },
+                                    "992": {
+                                        "items":4
+                                    },
+                                    "1200": {
+                                        "items":5
+                                    }
+                                }
+                            }'>
+
+
+                @await Component.InvokeAsync("AllInCategoryPc")
+            </div><!-- End .owl-carousel -->
+        </div><!-- .End .tab-pane -->
+
+        <div class="tab-pane p-0 fade" id="new-phones-tab" role="tabpanel"
+             aria-labelledby="new-phones-link">
+            <div class="owl-carousel owl-full carousel-equal-height carousel-with-shadow" data-toggle="owl"
+                 data-owl-options='{
+                                "nav": true,
+                                "dots": true,
+                                "margin": 20,
+                                "loop": false,
+                                "rtl": true,
+                            "responsive": {
+                                    "0": {
+                                        "items":2
+                                    },
+                                    "480": {
+                                        "items":2
+                                    },
+                                    "768": {
+                                        "items":3
+                                    },
+                                    "992": {
+                                        "items":4
+                                    },
+                                    "1200": {
+                                        "items":5
+                                    }
+                                }
+                            }'>
+                @await Component.InvokeAsync("AllInCategoryMobile")
+            </div>
+        </div><!-- .End .tab-pane -->
+        <div class="tab-pane p-0 fade" id="new-watches-tab" role="tabpanel"
+             aria-labelledby="new-watches-link">
+            <div class="owl-carousel owl-full carousel-equal-height carousel-with-shadow" data-toggle="owl"
+                 data-owl-options='{
+                                "nav": true,
+                                "dots": true,
+                                "margin": 20,
+                                "loop": false,
+                                "rtl": true,
+                            "responsive": {
+                                    "0": {
+                                        "items":2
+                                    },
+                                    "480": {
+                                        "items":2
+                                    },
+                                    "768": {
+                                        "items":3
+                                    },
+                                    "992": {
+                                        "items":4
+                                    },
+                                    "1200": {
+                                        "items":5
+                                    }
+                                }
+                            }'>
+                @await Component.InvokeAsync("AllInCategoryWatch")
+            </div>
+        </div><!-- .End .tab-pane -->
+        <div class="tab-pane p-0 fade" id="new-acc-tab" role="tabpanel" aria-labelledby="new-acc-link">
+            <div class="owl-carousel owl-full carousel-equal-height carousel-with-shadow" data-toggle="owl"
+                 data-owl-options='{
+                                "nav": true,
+                                "dots": true,
+                                "margin": 20,
+                                "loop": false,
+                                "rtl": true,
+                            "responsive": {
+                                    "0": {
+                                        "items":2
+                                    },
+                                    "480": {
+                                        "items":2
+                                    },
+                                    "768": {
+                                        "items":3
+                                    },
+                                    "992": {
+                                        "items":4
+                                    },
+                                    "1200": {
+                                        "items":5
+                                    }
+                                }
+                            }'>
+                @await Component.InvokeAsync("AllInCategoryXio")
+            </div><!-- End .owl-carousel -->
+        </div><!-- .End .tab-pane -->
+    </div><!-- End .tab-content -->
+</div><!-- End .container -->
+
+<div class="mb-6"></div><!-- End .mb-6 -->
+
+
+<div class="mb-5"></div><!-- End .mb-5 -->
+
+<div class="container for-you">
+    <div class="heading heading-flex mb-3">
+        <div class="heading-left">
+            <h2 class="title">آخرین محصولات</h2><!-- End .title -->
+        </div><!-- End .heading-left -->
+
+        <div class="heading-right">
+            <a href="#" class="title-link">مشاهده همه محصولات <i class="icon-long-arrow-left"></i></a>
+        </div><!-- End .heading-right -->
+    </div><!-- End .heading -->
+
+    <div class="products">
+        <div class="row justify-content-center">
+            <partial name="_NewProductBox" model="@lastProduct" />
+
+        </div><!-- End .row -->
+    </div><!-- End .products -->
+</div><!-- End .container -->
+
+<div class="mb-4"></div><!-- End .mb-4 -->
+
+<div class="container">
+    <hr class="mb-0">
+</div><!-- End .container -->
+
+<div class="icon-boxes-container bg-transparent">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-lg-3">
+                <div class="icon-box icon-box-side">
+                    <span class="icon-box-icon text-dark">
+                        <i class="icon-rocket"></i>
+                    </span>
+                    <div class="icon-box-content">
+                        <h3 class="icon-box-title">ارسال رایگان</h3><!-- End .icon-box-title -->
+                        <p>برای سفارشات بالای 50 هزار تومان</p>
+                    </div><!-- End .icon-box-content -->
+                </div><!-- End .icon-box -->
+            </div><!-- End .col-sm-6 col-lg-3 -->
+
+            <div class="col-sm-6 col-lg-3">
+                <div class="icon-box icon-box-side">
+                    <span class="icon-box-icon text-dark">
+                        <i class="icon-rotate-left"></i>
+                    </span>
+
+                    <div class="icon-box-content">
+                        <h3 class="icon-box-title">بازگشت رایگان</h3><!-- End .icon-box-title -->
+                        <p>تا 30 روز</p>
+                    </div><!-- End .icon-box-content -->
+                </div><!-- End .icon-box -->
+            </div><!-- End .col-sm-6 col-lg-3 -->
+
+            <div class="col-sm-6 col-lg-3">
+                <div class="icon-box icon-box-side">
+                    <span class="icon-box-icon text-dark">
+                        <i class="icon-info-circle"></i>
+                    </span>
+
+                    <div class="icon-box-content">
+                        <h3 class="icon-box-title">20% تخفیف برای اولین خرید</h3>
+                        <!-- End .icon-box-title -->
+                        <p>ثبت نام کنید</p>
+                    </div><!-- End .icon-box-content -->
+                </div><!-- End .icon-box -->
+            </div><!-- End .col-sm-6 col-lg-3 -->
+
+            <div class="col-sm-6 col-lg-3">
+                <div class="icon-box icon-box-side">
+                    <span class="icon-box-icon text-dark">
+                        <i class="icon-life-ring"></i>
+                    </span>
+
+                    <div class="icon-box-content">
+                        <h3 class="icon-box-title">پشتیبانی حرفه ای</h3><!-- End .icon-box-title -->
+                        <p>خدمات 24 ساعته / 7 روز هفته</p>
+                    </div><!-- End .icon-box-content -->
+                </div><!-- End .icon-box -->
+            </div><!-- End .col-sm-6 col-lg-3 -->
+        </div><!-- End .row -->
+    </div><!-- End .container -->
+</div><!-- End .icon-boxes-container -->
